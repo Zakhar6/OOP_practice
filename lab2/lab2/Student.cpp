@@ -1,22 +1,30 @@
 #include "Student.h"
 
 std::istream& operator>>(std::istream& in, Student& s) {
+    std::cout << "Enter id: ";
     in >> s.id;
-    in.ignore();
-    std::getline(in, s.firstName);
-    std::getline(in, s.lastName);
-    std::getline(in, s.middleName);
-    std::getline(in, s.birthDate);
-    std::getline(in, s.phoneNumber);
+    std::cout << "Enter first name: ";
+    in >> s.firstName;
+    std::cout << "Enter middle name: ";
+    in >> s.middleName;
+    std::cout << "Enter last name: ";
+    in >> s.lastName;
+    std::cout << "Enter birth date: ";
+    in >> s.birthDate;
+    std::cout << "Enter phone number: ";
+    in >> s.phoneNumber;
+    std::cout << "Enter faculty: ";
+    in >> s.faculty;
+    std::cout << "Enter course: ";
+    in >> s.course;
+    std::cout << "Enter group: ";
+    in >> s.group;
     return in;
 }
 
 std::ostream& operator<<(std::ostream& out, const Student& s) {
-    out << "ID: " << s.id << std::endl;
-    out << "First Name: " << s.firstName << std::endl;
-    out << "Last Name: " << s.lastName << std::endl;
-    out << "Middle Name: " << s.middleName << std::endl;
-    out << "Birth Date: " << s.birthDate << std::endl;
-    out << "Phone Number: " << s.phoneNumber;
+    out << s.id << " " << s.firstName << " " << s.middleName << " " << s.lastName
+        << " " << s.birthDate << " " << s.phoneNumber << " " << s.faculty
+        << " " << s.course << " " << s.group;
     return out;
 }
