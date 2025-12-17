@@ -1,15 +1,17 @@
-﻿#include "Student.h"
-#include <iostream>
+﻿#include <iostream>
+#include "Student.h"
 
 int main() {
-    Student object1, object2, object3;
-    std::cin >> object1 >> object2 >> object3;
-    std::cout << object1 << std::endl << object2 << std::endl << object3 << std::endl;
+    Student s1(1, "Балик", "Назар", "Петрович",
+        "Львів", "0991112233",
+        "ІТ", 2, "ІТ-21");
 
-    if (object1 == object2)
-        std::cout << "object1 і object2 однакові" << std::endl;
-    else
-        std::cout << "object1 і object2 різні" << std::endl;
+    Student s2(2, "Гордієнко", "Захарій", "Іванович",
+        "Тернопіль", "0973334455",
+        "Тернопіль", 3, "КН-223");
+
+    s1.print();
+    s2.print();
 
     return 0;
 }
