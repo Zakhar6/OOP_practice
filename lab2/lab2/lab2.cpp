@@ -2,16 +2,18 @@
 #include "Student.h"
 
 int main() {
-    Student s1(1, "Балик", "Назар", "Петрович",
-        "Львів", "0991112233",
-        "ІТ", 2, "ІТ-21");
+    Student s1, s2;
 
-    Student s2(2, "Гордієнко", "Захарій", "Іванович",
-        "Тернопіль", "0973334455",
-        "Тернопіль", 3, "КН-223");
+    std::cin >> s1;
+    std::cin >> s2;
 
-    s1.print();
-    s2.print();
+    std::cout << s1 << std::endl;
+    std::cout << s2 << std::endl;
+
+    if (s1 == s2)
+        std::cout << "Students are equal" << std::endl;
+    else
+        std::cout << "Students are not equal" << std::endl;
 
     return 0;
 }

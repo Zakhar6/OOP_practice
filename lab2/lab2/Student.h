@@ -1,5 +1,7 @@
 #pragma once
 #include "Person.h"
+#include <string>
+#include <iostream>
 
 class Student : public Person {
 private:
@@ -8,9 +10,18 @@ private:
     std::string group;
 
 public:
-    Student(int id, std::string ln, std::string fn, std::string mn,
-        std::string addr, std::string phone,
-        std::string faculty, int course, std::string group);
+    Student();
+    Student(int id,
+        const std::string& lastName,
+        const std::string& firstName,
+        const std::string& middleName,
+        const std::string& phone,
+        const std::string& faculty,
+        int course,
+        const std::string& group);
 
-    void print() const;
+    friend std::istream& operator>>(std::istream& in, Student& s);
+    friend std::ostream& operator<<(std::ostream& out, const Student& s);
+
+    bool operator==(const Student& other) const;
 };

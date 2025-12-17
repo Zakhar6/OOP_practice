@@ -1,18 +1,20 @@
 #include "Person.h"
 
-Person::Person() {}
-
-Person::Person(int id, std::string ln, std::string fn, std::string mn,
-    std::string addr, std::string phone)
-    : id(id), lastName(ln), firstName(fn), middleName(mn),
-    address(addr), phone(phone) {
+Person::Person()
+    : id(0), lastName(""), firstName(""), middleName(""), phone("") {
 }
 
-void Person::print() const {
-    std::cout << id << " "
-        << lastName << " "
-        << firstName << " "
-        << middleName << " "
-        << address << " "
-        << phone;
+Person::Person(int id,
+    const std::string& lastName,
+    const std::string& firstName,
+    const std::string& middleName,
+    const std::string& phone)
+    : id(id),
+    lastName(lastName),
+    firstName(firstName),
+    middleName(middleName),
+    phone(phone) {
+}
+
+Person::~Person() {
 }

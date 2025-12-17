@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <iostream>
 
 class Person {
 protected:
@@ -8,13 +7,15 @@ protected:
     std::string lastName;
     std::string firstName;
     std::string middleName;
-    std::string address;
     std::string phone;
 
 public:
     Person();
-    Person(int id, std::string ln, std::string fn, std::string mn,
-        std::string addr, std::string phone);
+    Person(int id,
+        const std::string& lastName,
+        const std::string& firstName,
+        const std::string& middleName,
+        const std::string& phone);
 
-    void print() const;
+    virtual ~Person();
 };
