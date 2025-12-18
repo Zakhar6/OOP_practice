@@ -1,21 +1,19 @@
 #pragma once
-#include <string>
+#include <QString>
 
 class Person {
 protected:
     int id;
-    std::string lastName;
-    std::string firstName;
-    std::string middleName;
-    std::string phone;
+    QString lastName;
+    QString firstName;
+    QString middleName;
+    QString phone;
 
 public:
     Person();
-    Person(int id,
-        const std::string& lastName,
-        const std::string& firstName,
-        const std::string& middleName,
-        const std::string& phone);
+    Person(int id, const QString& lastName, const QString& firstName, const QString& middleName, const QString& phone);
+
+    QString toString() const;
 
     virtual ~Person();
 };
